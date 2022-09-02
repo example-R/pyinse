@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="exampler.css">
+  <script src="https://kit.fontawesome.com/0494e38872.js" crossorigin="anonymous"></script>
+		<title>PYINSE database - By Roger Padrell</title>
+	</head>
+	<body>
+		<button onclick="window.location.href = 'index.html'" style="all: unset;border-radius: 100%; width: 70px; height: 100px; background-color: e91e63; color: white; align-self: flex-start;"><i class="fa-solid fa-arrow-left"></i></button><br><br>
+		<h1>Your result is:</h1>
+		<br><br>
+		<div id="anserwer"></div>
+	</body>
+	<script type="text/javascript" src="elements.js"></script>
+	<script type="text/javascript">
+		function getOfJsonArray(whatJson, whatIndex){
+			var a = whatJson;
+			var b = "";
+			for (d in a){
+				sessionStorage.result = ""
+				var c = a[d]
+				if (c.name == whatIndex){
+					sessionStorage.result = c.content;
+				}
+			}
+			var result = sessionStorage.result;
+			return result;
+		}
+		var q =  new URLSearchParams(window.location.search).get('q');
+		document.getElementById("anserwer").innerHTML = getOfJsonArray(el, q);
+	</script>
+	<style type="text/css">
+		body{
+			display: flex;
+			align-content: center;
+			height: 100%;
+			width: 100%;
+			align-items: center;
+			text-align: center;
+		}
+		#anserwer{
+			background-color: powderblue;
+			align-self: center;
+			width: 70%;
+			height: 50%;
+			border-radius: 25px;
+		}
+	</style>
+</html>
