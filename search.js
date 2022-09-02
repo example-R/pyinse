@@ -5,18 +5,18 @@ search.semblants = function(){
 	document.getElementById("semblants").innerHTML = "";
 	for(s in search.items){
 		if(search.items[s].includes(value)){
-			document.getElementById("semblants").innerHTML = document.getElementById("semblants").innerHTML + "<a class='hover-text' href='data.html?&q=" + search.items[s] + "'>" + search.items[s] + "</a><br><br>";
+			document.getElementById("semblants").innerHTML = document.getElementById("semblants").innerHTML + "<a style='color:white' class='hover-text' href='data.html?&q=" + search.items[s] + "'>" + search.items[s] + "</a><br><br>";
 		}
 	}
 }
 search.search = function(){
 	var value = document.getElementById("in").value;
 	if(search.items.indexOf(value) >= 0){
-		document.getElementById("error").innerHTML = "<br><div class='hover'><a class='hover-text' href='data.html?&q=" + value + "'>Go to:" + value + "</a></div>"
+		document.getElementById("error").innerHTML = "<br><div style='color:white class='hover'><a class='hover-text' href='data.html?&q=" + value + "'>Go to:" + value + "</a></div>"
 	}
 	else{
 		search.semblants()
-		document.getElementById("error").innerHTML = "<p style='color:red'>There is no apartat called: '" + value + "'.</p><br><br><p>Maybe:</p>";
+		document.getElementById("error").innerHTML = "<p style='color:white'>There is no apartat called: '" + value + "'.</p><br><br><p style='color:white'>Maybe:</p>";
 	}
 }
 search.advance = function(event){
